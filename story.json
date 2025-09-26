@@ -1,10 +1,24 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "MetroTwin - Digital Twin for Urban Infrastructure",
-  "summary": "A graph-based digital twin platform that models city infrastructure and runs simulations to forecast the impact of planning decisions on energy, transport, and environment.",
-  "problem": "City planners lack an integrated platform to simulate infrastructure changes across transport, energy, and environmental systems; decisions are often siloed and reactive.",
-  "solution": "Built a Neo4j-backed digital twin combining geospatial data, building models, sensor feeds, and transport networks. Applied Graph Neural Networks (GNNs) and physics-informed ML to run 'what-if' simulations and provide actionable forecasts for planners.",
-  "tech_stack": [
+  "overview": "A graph-based digital twin platform that models city infrastructure and runs simulations to forecast the impact of planning decisions on energy, transport, and environment.",
+  "keyFeatures": [
+    "Neo4j digital twin storing entities and relationships",
+    "Streaming ingestion (Kafka) of sensors and transport data",
+    "GNN models for forecasting demand and load",
+    "Simulation orchestration with Kubernetes and Airflow",
+    "Visualization dashboard with scenario comparison"
+  ],
+  "pros": [
+    "Faster scenario evaluation (days → minutes)",
+    "Improved forecasting accuracy by 20%",
+    "Supports cross-department urban planning"
+  ],
+  "cons": [
+    "Complex integration of multi-source geospatial & temporal data",
+    "High computational requirements for GNN training",
+    "Ensuring explainability for public-sector stakeholders"
+  ],
+  "techStack": [
     "Neo4j",
     "Python",
     "PyTorch Geometric (GNNs)",
@@ -16,71 +30,33 @@
     "React",
     "Airflow"
   ],
-  "overview": {
-    "architecture": {
-      "styles": ["Digital Twin", "Graph-Centric", "Simulation-as-a-Service"],
-      "key_components": [
-        "Neo4j digital twin storing entities and relationships",
-        "Streaming ingestion (Kafka) of sensors and transport data",
-        "GNN models for forecasting demand and load",
-        "Simulation orchestration with Kubernetes and Airflow",
-        "Visualization dashboard with scenario comparison"
-      ]
-    },
-    "design_patterns": [
-      "Digital Twin",
-      "Graph-First Modeling",
-      "Simulation Pipelines",
-      "Model-in-the-loop validation"
-    ]
-  },
-  "architecture": {
-    "style": "Graph-Centric Digital Twin",
-    "key_components": [
-      "Neo4j knowledge/asset graph",
-      "Time-series store (InfluxDB / TimescaleDB)",
-      "GNN inference cluster",
-      "Streaming (Kafka)",
-      "Scenario orchestration & visualization"
-    ],
-    "diagram_url": "https://example.com/metrotwin-architecture.png"
-  },
-  "challenges": [
-    "Merging multi-source geospatial & temporal data with alignment",
-    "Building accurate GNNs that generalize across city regions",
-    "Making simulations performant for interactive planners",
-    "Ensuring model explainability for public-sector stakeholders"
+  "tags": [
+    "Graph AI",
+    "Digital Twin",
+    "Neo4j"
   ],
+  "problem": "City planners lack an integrated platform to simulate infrastructure changes across transport, energy, and environmental systems; decisions are often siloed and reactive.",
+  "solution": "Built a Neo4j-backed digital twin combining geospatial data, building models, sensor feeds, and transport networks. Applied Graph Neural Networks (GNNs) and physics-informed ML to run 'what-if' simulations and provide actionable forecasts for planners.",
+  "timeline": "2022-10 - 2023-06",
   "impact": {
     "metrics": {
-      "planning_speed": "Reduced scenario evaluation time from days to minutes",
-      "cost_savings": "30% lower capital over-provisioning in pilot projects",
+      "planning speed": "Reduced scenario evaluation time from days to minutes",
+      "cost savings": "30% lower capital over-provisioning in pilot projects",
       "accuracy": "Forecasting accuracy improved by 20% vs baseline"
     },
     "business_outcome": "Enabled data-driven urban planning that reduced unnecessary infrastructure spend and improved cross-department alignment."
   },
-  "links": {
-    "github": "https://github.com/your-username/metrotwin",
-    "demo": "https://demo.metrotwin.example",
-    "docs": "https://docs.metrotwin.example"
-  },
+  "codeSnippets": {},
   "media": [
-    { "type": "image", "url": "https://example.com/screenshots/digital-twin-dashboard.png", "caption": "Scenario comparison dashboard" },
-    { "type": "diagram", "url": "https://example.com/metrotwin-architecture.png", "caption": "MetroTwin architecture" }
-  ],
-  "timeline": { "start": "2022-10", "end": "2023-06" },
-  "tags": [
-    { "name": "Graph AI", "summary": "GNNs and graph modeling for urban systems" },
-    { "name": "Digital Twin", "summary": "Simulation and what-if analysis" },
-    { "name": "Neo4j", "summary": "City asset & relationship modeling" }
-  ],
-  "flow": {
-    "steps": [
-      { "id": "1", "type": "ingest", "name": "Data Onboarding", "action": "Ingest GIS, building models, sensor telemetry" },
-      { "id": "2", "type": "model", "name": "Graph Model Build", "action": "Construct and validate the Neo4j twin schema" },
-      { "id": "3", "type": "train", "name": "GNN Training", "action": "Train GNNs for demand & load forecasting" },
-      { "id": "4", "type": "simulate", "name": "Scenario Simulation", "action": "Run what-if simulations and aggregate KPIs" },
-      { "id": "5", "type": "visualize", "name": "Planner Review", "action": "Display results and explanation to planners" }
-    ]
-  }
+    {
+      "type": "image",
+      "url": "https://example.com/screenshots/digital-twin-dashboard.png",
+      "caption": "Scenario comparison dashboard"
+    },
+    {
+      "type": "diagram",
+      "url": "https://example.com/metrotwin-architecture.png",
+      "caption": "MetroTwin architecture"
+    }
+  ]
 }
